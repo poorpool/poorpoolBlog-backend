@@ -1,5 +1,7 @@
 # poorpoolBlog-backend
-个人博客系统——基于Spring Boot打造
+个人博客系统——基于Spring Boot打造。
+
+大约还用到了 Mybatis 及逆向工程，jwt。
 
 因涉及敏感信息，application.yml 没有提交。路径为`src/main/resources/application.yml`
 
