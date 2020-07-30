@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--    <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/poorpoolblog"
+                        userId="root"
+                        password="153246">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="net.yxchen.poorpoolblog.bean" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="net.yxchen.poorpoolblog.dao"  targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+<!--        <table tableName="t_article" domainObjectName="Article">-->
+<!--            <columnOverride column="article_title" jdbcType="VARCHAR"/>-->
+<!--            <columnOverride column="article_content" jdbcType="VARCHAR"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_category" domainObjectName="Category"/>-->
+<!--        <table tableName="t_label" domainObjectName="Label"/>-->
+<!--        <table tableName="t_comment" domainObjectName="Comment"/>-->
+<!--        <table tableName="t_user" domainObjectName="User"/>-->
+        <table tableName="t_article_label" domainObjectName="ArticleLabel"/>
+    </context>
+</generatorConfiguration>
